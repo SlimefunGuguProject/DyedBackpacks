@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.dyedbackpacks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,12 +34,13 @@ public class DyedBackpacks extends JavaPlugin implements SlimefunAddon {
         Config cfg = new Config(this);
         new Metrics(this, 5778);
 
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/DyedBackpacks/master").start();
+        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "DyedBackpacks", "master");
         }
 
-        Research research = new Research(new NamespacedKey(this, "dyed_backpacks"), 17200, "Dyed Backpacks", 24);
-        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(this, "dyed_backpacks"), new CustomItemStack(PlayerHead.getItemStack(PlayerSkin.fromHashCode(BackpackColor.RED.getTexture())), "&4Dyed Backpacks"), 2);
+        Research research = new Research(new NamespacedKey(this, "dyed_backpacks"), 17200, "染色背包", 24);
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(this, "dyed_backpacks"), new CustomItemStack(PlayerHead.getItemStack(PlayerSkin.fromHashCode(BackpackColor.RED.getTexture())),
+            "&4染色背包"), 2);
 
         if (cfg.getBoolean("backpacks.small")) {
             createBackpacks(itemGroup, research, SlimefunItems.BACKPACK_SMALL, 9);
@@ -74,7 +76,7 @@ public class DyedBackpacks extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/TheBusyBiscuit/DyedBackpacks/issues";
+        return "https://github.com/SlimefunGuguProject/DyedBackpacks/issues";
     }
 
     @Override
