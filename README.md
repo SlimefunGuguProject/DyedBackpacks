@@ -6,13 +6,9 @@
 
 ## 下载
 
-点击下方图片下载：
+[下载 DyedBackpacks](https://resources.guizhanss.com/plugin/DyedBackpacks)
 
-<p align="center">
-  <a href="https://builds.guizhanss.com/SlimefunGuguProject/DyedBackpacks/master">
-    <img src="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/DyedBackpacks/master/badge.svg" alt="Build Server"/>
-  </a>
-</p>
+点击下方图片下载：
 
 ## Discord
 
